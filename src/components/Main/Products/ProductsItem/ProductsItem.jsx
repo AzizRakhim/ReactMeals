@@ -19,6 +19,8 @@ function ProductsItem(props) {
       <ProductsBtn 
         addHandler={props.addHandler} 
         submitHandler={props.submitHandler}
+        value={props.value}
+        inputHandler={props.inputHandler}
       />
     </li>
   )

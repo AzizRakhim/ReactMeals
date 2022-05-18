@@ -25,12 +25,13 @@ class App extends Component {
       },
       total : 0,
       modal : false,
-      totalPrice : 0
+      totalPrice : 0,
+      animate : false
     }
   }
 
   updateNumState = (products) => {
-    let sum = Object.keys(products).map((item, index) => {
+    let sum = Object.keys(products).map((item) => {
       return products[item];
     }).reduce((sum, el) => {
       return sum + el;
@@ -56,6 +57,19 @@ class App extends Component {
       totalPrice : newPrice
     });
     this.updateNumState(updateProducts);
+    this.animateHandler();
+  }
+
+  animateHandler = () => {
+    this.setState({
+      animate : true
+    });
+
+    setTimeout(() => {
+      this.setState(({
+        animate : false
+      }))
+    }, 300);
   }
 
   removeHandler = (type) => {
@@ -93,7 +107,13 @@ class App extends Component {
 
   purchaseCancel = () => {
     this.setState({
-      modal : false
+      modal : true
+    })
+  }
+
+  inputHandler = (e) => {
+    this.setState({
+      value : e.target.value
     })
   }
 
@@ -103,6 +123,7 @@ class App extends Component {
         <Header 
           cartNum={this.state.total}
           modalHandler={this.modalHandler}
+          animate={this.state.animate}
         />
         <div className="background-img">
           <img className="background-real-img" src={backgroundImg} alt="meals" />
@@ -112,6 +133,8 @@ class App extends Component {
           <Products 
             addHandler={this.addHandler}
             submitHandler={this.submitHandler}
+            value={this.state.value}
+            inputHandler={this.inputHandler}
           />
         </main>
         <Modal

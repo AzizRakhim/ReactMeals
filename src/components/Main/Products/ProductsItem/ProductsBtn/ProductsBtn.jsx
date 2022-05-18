@@ -9,7 +9,7 @@ function ProductsBtn(props) {
           <label htmlFor="products__label" className='products__label'>
             Amount
           </label>
-          <input id='products__label' type="number" className='products__input' value={1} min={1} />
+          <input id='products__label' type="number" className='products__input' min={1} onChange={props.inputHandler} value={props.value} />
         </div>
         <button className='products__btn' onClick={props.addHandler}>
           + Add

@@ -16,6 +16,7 @@ function Header(props) {
           <HeaderBtn 
             cartNum={props.cartNum} 
             modalHandler={props.modalHandler}
+            animate={props.animate}
           />
         </div>
       </Container>

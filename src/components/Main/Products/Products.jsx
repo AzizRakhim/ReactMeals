@@ -39,6 +39,8 @@ function Products(props) {
             data={item}
             addHandler={() => props.addHandler(item.type)}
             submitHandler={props.submitHandler}
+            value={props.value}
+            inputHandler={props.inputHandler}
           />
         ))}
       </ul>

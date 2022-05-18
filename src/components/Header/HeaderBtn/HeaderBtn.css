@@ -9,6 +9,19 @@
   align-items: center;
   box-shadow: 0 2px 8px #00000040;
   z-index: 10;
+  
+}
+
+@keyframes buttonIncrease {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
 }
 
 .header__link{

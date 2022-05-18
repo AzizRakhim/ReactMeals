@@ -1,0 +1,25 @@
+.products__item{
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.products__title{
+  margin-bottom: 0.25rem;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.products__text{
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+}
+
+.products__price{
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 700;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
